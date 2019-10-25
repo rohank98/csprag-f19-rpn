@@ -8,8 +8,15 @@ def calculate(string):
 			arg2 = stack.pop()
 			result = arg1 + arg2
 			stack.append(result)
+		elif token == '-':
+                        arg1 = stack.pop()
+                        arg2 = stack.pop()
+                        result = arg2 - arg1
+                        stack.append(result)
 		else:
 			stack.append(int(token))
+	if len(stack) != 1:
+		raise TypeError("Bad input: " + string)
 	return stack.pop()
 
 def main():
