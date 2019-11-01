@@ -9,8 +9,11 @@ class TestBasics(unittest.TestCase):
                 result = rpn.calculate("3 1 -")
                 self.assertEqual(2, result)
 	def test_mul(self):
-		result = rpn.calculate('4 8 *')
+		result = rpn.calculate("4 8 *")
 		self.assertEqual(32, result)
+	def test_div(self):
+		result = rpn.calculate("5 3 /")
+		self.assertEqual(1, result)
 	def test_bad(self):
 		with self.assertRaises(TypeError):
 			rpn.calculate("1 2 3 +")
